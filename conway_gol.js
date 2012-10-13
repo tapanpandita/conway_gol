@@ -135,4 +135,28 @@ $(document).ready(function () {
         initialise_life(pop_x, pop_y);
         render_table(life_matrix);
     });
+
+    $('#pop_x').change(function () {
+        $('#pop_x_val').html($(this).val());
+        pop_x = $(this).val();
+        initialise_life(pop_x, pop_y);
+        render_table(life_matrix);
+    });
+
+    $('#pop_y').change(function () {
+        $('#pop_y_val').html($(this).val());
+        pop_y = $(this).val();
+        initialise_life(pop_x, pop_y);
+        render_table(life_matrix);
+    });
+
+    $('.open-menu').click(function () {
+        if ($('.open-menu').html() === '+') {
+            $('.open-menu').html('-');
+            $('.size-controls').show();
+        } else {
+            $('.open-menu').html('+');
+            $('.size-controls').hide();
+        }
+    });
 });

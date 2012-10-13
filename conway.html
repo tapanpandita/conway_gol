@@ -10,12 +10,42 @@
             .dead {
                 background-color:white;
             }
+            .top-right {
+                position: fixed;
+                right: 0;
+                top: 0;
+            }
+            .open-menu {
+                font-size: 40px;
+                border: 1px solid black;
+                z-index: 1000;
+            }
+            .size-controls {
+                background-color: #f1f1f1;
+            }
         </style>
     </head>
     <body>
         <table class="table table-bordered" id="table">
         </table>
-        <button class="btn btn-inverse" id="start_life">Next</button>
-        <button class="btn btn-inverse" id="reset_life">Reset</button>
+        <div>
+            <button class="btn btn-inverse" id="start_life">Next</button>
+            <button class="btn btn-inverse" id="reset_life">Reset</button>
+        </div>
+        <div class="top-right open-menu">
+            +
+        </div>
+        <div class="size-controls top-right" style="display: none;">
+            <div>
+                <label for="pop_x">X size</label>
+                <input id="pop_x" type="range" min="1" max="100" step="1" name="pop_x" value="15"/>
+                <span id="pop_x_val">15</span>
+            </div>
+            <div>
+                <label for="pop_y">Y size</label>
+                <input id="pop_y" type="range" min="1" max="100" step="1" name="pop_y" value="15"/>
+                <span id="pop_y_val">15</span>
+            </div>
+        </div>
     </body>
 </html>

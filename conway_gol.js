@@ -82,9 +82,9 @@ var update_matrix = function () {
 
 var initialise_life = function (x, y) {
     life_matrix = [];
-    for (var i = 0; i < y; i++) {
+    for (var i = 0; i < x; i++) {
         var row = [];
-        for (var j = 0; j < x; j++) {
+        for (var j = 0; j < y; j++) {
             row.push(0);
         }
         life_matrix.push(row);

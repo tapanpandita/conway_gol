@@ -141,6 +141,8 @@ $(document).ready(function () {
             for (var j = 0; j < life_matrix[i].length; j++) {
                 if (Math.random() > 0.5) {
                     life_matrix[i][j] = 1;
+                } else {
+                    life_matrix[i][j] = 0;
                 }
             }
         }

@@ -136,6 +136,17 @@ $(document).ready(function () {
         render_table(life_matrix);
     });
 
+    $('#random_life').click(function () {
+        for (var i = 0; i < life_matrix.length; i++) {
+            for (var j = 0; j < life_matrix[i].length; j++) {
+                if (Math.random() > 0.5) {
+                    life_matrix[i][j] = 1;
+                }
+            }
+        }
+        render_table(life_matrix);
+    });
+
     $('#pop_x').change(function () {
         $('#pop_x_val').html($(this).val());
         pop_x = $(this).val();

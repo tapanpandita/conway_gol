@@ -12,6 +12,15 @@ var life_matrix, pop_x, pop_y;
 pop_x = 15;
 pop_y = 15;
 
+var get_random_color = function () {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+}
+
 var render_table = function (life_matrix) {
     var life_table = $('#table');
     life_table.empty();
@@ -19,7 +28,11 @@ var render_table = function (life_matrix) {
         life_table.append('<tr id="row_' + i + '"></tr>');
         for (var j = 0; j < life_matrix[i].length; j++) {
             curr_class = life_matrix[i][j] == 1 ? 'alive' : 'dead';
-            $('#row_' + i).append('<td id="' + i +',' + j + '" class="cell ' + curr_class + '">' + i + ',' + j + '</td>');
+            if (curr_class === 'alive') {
+                $('#row_' + i).append('<td id="' + i +',' + j + '" class="cell ' + curr_class + '" style="background-color: ' + get_random_color() + ';">' + '</td>');
+            } else {
+                $('#row_' + i).append('<td id="' + i +',' + j + '" class="cell ' + curr_class + '">' + '</td>');
+            }
         }
     }
 }
